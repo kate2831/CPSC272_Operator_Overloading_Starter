@@ -1,6 +1,6 @@
 //
-// Created by Christopher Vaughn
-// Date: 9/15/25
+// Kate Rivera
+// Date: 9/22/25
 // Project: 272 Forking & Overloading Exercise
 //
 #include "ServiceAccount.h"
@@ -121,6 +121,11 @@ bool operator==(const ServiceAccount& a, const ServiceAccount& b) {
  */
 bool operator>(const ServiceAccount& a, const ServiceAccount& b) {
     return a.getBalance() > b.getBalance();
+}
+
+// Return 'true' if the calling object's balance is less than the other object's balance
+bool operator<(const ServiceAccount& other) const{
+    return this->accountBalance < other.accountBalance;
 }
 
 

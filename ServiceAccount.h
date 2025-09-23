@@ -1,6 +1,6 @@
 //
-// Created by Christopher Vaughn
-// Date: 9/15/25
+// Kate Rivera
+// Date: 9/22/25
 // Project: 272 Forking & Overloading Exercise
 //
 
@@ -75,6 +75,9 @@ public:
      * @note Prints error message if balance is negative
      */
     void setBalance(double);
+    
+    // Compare two 'ServiceAccount' objects & return a boolean
+    bool operator<(const ServiceAccount& other) const;
 };
 
 /**
