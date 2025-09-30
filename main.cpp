@@ -1,7 +1,7 @@
 //
 // Kate Rivera
-// Date: 9/22/25
-// Project: 272 Forking & Overloading Exercise
+// Date: 9/28/25
+// Lab Activities: Inheritance
 //
 #include <iostream>
 #include "ServiceAccount.h"
@@ -18,12 +18,16 @@
  * @return 0 on successful execution
  */
 int main() {
+    
+    // Initialization
+    runMenu();
+    
     // Create first ServiceAccount with identifier "0112", password "password", and balance $1000.00
     // ServiceAccount a("0112", "password", 1000.00);
-    
+        
     // Create second ServiceAccount with identifier "9098", same password, and same balance $1000.00
     // ServiceAccount b("9098", "password", 1000.00);
-    
+        
     // Create two new ServiceAccount objects to verify operator works
     ServiceAccount a("0112", "password", 1000.00);
     ServiceAccount b("9098", "password", 500.00);
@@ -33,21 +37,60 @@ int main() {
         std::cout << "Accounts are equal" << std::endl;
     else
         std::cout << "Accounts are not equal" << std::endl;
-    
+        
     // Modify account 'a' balance to $10.00 to demonstrate the greater-than operator
     a.setBalance(10.00);
-    
+        
     // Test greater-than operator (>) - compares accounts based on balance only
     if (a > b)
         std::cout << "Account a has more money" << std::endl;
     else
         std::cout << "Account b has more money" << std::endl;
-    
+        
     // Test less-than operator (<) - compares accounts based on balance only
     if (a > b)
         std::cout << "Account a has less money" << std::endl;
     else
         std::cout << "Account b has less money" << std::endl;
-    
-    return 0;  // Indicate successful program execution
-}
+        
+        return 0;  // Indicate successful program execution
+    }
+
+    // Menu system to test operators for deposits & withdrawals, static functions for printing & creaing accounts
+    int displayMenu(){
+        std::cout << "\nMenu:\n";
+        std::cout << "1. Make deposit\n";
+        std::cout << "2. Make withdrawal\n";
+        std::cout << "3. Print account";
+        std::cout << "4. Create account\n";
+        std::cout << "5. Exit\n";
+        std::cout << "Enter your choice: ";
+        int choice;
+        std::cin >> choice;
+        return choice;
+    }
+
+    // Function to run menu loop
+    void runMenu(){
+        int choice;
+        do{
+            // Get menu selection
+            choice = displayMenu();
+            // Carry out menu selection
+            switch(choice){
+                case 1:
+                    std::cout << "Please state how much you would like to deposit: ";
+                    break;
+                case 2:
+                    std::cout << "Please state how much you would like to withdraw: ";
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    std::cout << "Invalid choice. Please try again.\n";
+                    break;
+            }
+        } while (choice != 5);
+    }
